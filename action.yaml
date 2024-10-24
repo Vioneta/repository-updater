@@ -1,0 +1,26 @@
+name: "Community Vioneta Agro Add-ons Repository Updater"
+description: Tool for updating Vioneta Agro Add-on repositories.
+author: Vioneta
+
+branding:
+  color: red
+  icon: thumbs-up
+
+inputs:
+  token:
+    description: GitHub token that is allowed to write/commit to the target repo
+    required: true
+  repository:
+    description: The add-on repository to update (e.g., Vioneta/repository)
+    required: false
+  addon:
+    description: Slug of the add-on to update the repository for
+    required: false
+  force:
+    description: Force repository update, even if no changes are detected
+    default: "false"
+    required: false
+
+runs:
+  using: "docker"
+  image: "action/Dockerfile"
